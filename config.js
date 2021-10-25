@@ -6,13 +6,11 @@ dotenv.config();
 const dev = {
   name: 'Development',
   db: process.env.DEV_DB,
-  port: process.env.DEV_PORT,
 };
 
 const prod = {
   name: 'Production',
   db: process.env.PROD_DB,
-  port: process.env.PROD_PORT,
 };
 
 const test = {

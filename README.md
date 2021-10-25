@@ -5,7 +5,6 @@
 Make sure to declare the following env vars in your .env file:
 
 * DEV_DB
-* DEV_PORT
 
 Install everything with:
 
