@@ -1,4 +1,4 @@
-const setup = require('../test-helper');
+const { setup } = require('../test-helper');
 const app = require('../../app');
 const request = require('supertest');
 const expect = require('chai').expect;

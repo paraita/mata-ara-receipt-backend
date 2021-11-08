@@ -1,4 +1,5 @@
 const server = require('../src/db/index');
+const Customer = require('../src/db/model');
 
 const setup = () => {
   before(async () => {
@@ -26,4 +27,17 @@ const setup = () => {
   });
 };
 
-module.exports = setup;
+
+postReceipt = (receipt) => {
+  const newSell = new Customer({
+    receipt: receipt,
+    status: 'A'
+  });
+  return newSell.save()
+};
+
+
+module.exports = {
+  setup,
+  postReceipt
+};

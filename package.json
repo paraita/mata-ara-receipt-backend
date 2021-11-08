@@ -7,6 +7,7 @@
     "start": "NODE_ENV=prod node server",
     "dev": "NODE_ENV=dev nodemon server",
     "test": "NODE_ENV=test mocha --recursive --exit --timeout 10000",
+    "test:all": "npm test tests",
     "test:customer": "npm test tests/customers",
     "test:buy": "npm test tests/product/"
   },
