@@ -2,12 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const customerSchema = new Schema({
-  _id: {
-    type: String,
-    required: true,
-    unique: true
-  },
-  name
+  receipt: [],
+  status: String // "A"= Active,  "R"= Refund
 });
 
 const Customer = mongoose.model('Customer', customerSchema);
