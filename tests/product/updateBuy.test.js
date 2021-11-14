@@ -3,7 +3,7 @@ const request = require('supertest');
 const expect = require('chai').expect;
 const app = require('../../app');
 
-const url = '/api/v1/customers/refund';
+const url = '/api/v1/purchases/refund';
 const receipt = {
   appAccountToken: '1234567890'
 };

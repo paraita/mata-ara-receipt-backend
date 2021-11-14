@@ -3,7 +3,7 @@ const app = require('../../app');
 const request = require('supertest');
 const expect = require('chai').expect;
 
-const url = '/api/v1/customers/buy';
+const url = '/api/v1/purchases/buy';
 
 const receipt = {
   appAccountToken: '1234567890'

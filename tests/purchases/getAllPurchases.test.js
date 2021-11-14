@@ -3,9 +3,9 @@ const expect = require('chai').expect;
 const request = require('supertest');
 const app = require('../../app');
 
-const url = '/api/v1/customers'
+const url = '/api/v1/purchases'
 
-describe('Get all the customers', function() {
+describe('Get all the purchases', function() {
   setup();
   it('Status code 200', async () => {
     const res = await request(app).get(url);

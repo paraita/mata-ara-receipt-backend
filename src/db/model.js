@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const customerSchema = new Schema({
+const purchaseSchema = new Schema({
   receipt: [],
   status: String // "A"= Active,  "R"= Refund
 });
 
-const Customer = mongoose.model('Customer', customerSchema);
+const Purchase = mongoose.model('Customer', purchaseSchema);
 
-module.exports = Customer;
+module.exports = Purchase;
