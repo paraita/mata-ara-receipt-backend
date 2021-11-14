@@ -1,5 +1,7 @@
 # mata-ara-receipt-backend
 
+## Setup
+
 Make sure to declare the following environment variables in your .env file:
 
 * DEV_DB (e.g: `mongodb://MARB_root:MARB_example@localhost:27017/mataara`)
@@ -26,3 +28,9 @@ Just start the dev server with:
 ```bash
 npm run dev
 ```
+
+## Docs
+
+* https://developer.apple.com/documentation/storekit/original_api_for_in-app_purchase/validating_receipts_with_the_app_store
+* https://developer.apple.com/documentation/storekit/original_api_for_in-app_purchase/handling_refund_notifications
+
