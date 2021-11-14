@@ -1,7 +1,7 @@
 const app = require('./app');
 const server = require('./src/db/index');
 const { name, db } = require('./config');
-const PORT = 5000;
+const PORT = 5001;
 
 const listen = app.listen(PORT, () => {
   const msg = `Application is running on http://localhost:${PORT}`;

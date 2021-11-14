@@ -1,32 +1,9 @@
-// use admin
-// db.createUser({
-//     user: 'admin',
-//     pwd: 'yourpassword',
-//     roles: [
-//         {
-//             role: 'userAdminAnyDatabase',
-//             db: 'admin'
-//         },
-//         'readWriteAnyDatabase'
-//     ],
-// })
-//
-// use mataara
-// db.createUser({
-//     user: 'root',
-//     pwd: 'example',
-//     roles: [
-//         {
-//             role: 'readWrite',
-//             db: 'mataara',
-//         },
-//     ],
-// });
+// This is only used during the dev/qa phases
 
 db = db.getSiblingDB('mataara');
 
+// The mataara db wouldn't be created otherwise
 db.createCollection('sample_collection');
-
 db.sample_collection.insertMany([
     {
         user: '123AZERTY456',
@@ -43,3 +20,16 @@ db.sample_collection.insertMany([
         status: 'REFUND'
     },
 ]);
+
+db.createUser(
+    {
+        user: "MARB_root",
+        pwd: "MARB_example",
+        roles: [
+            {
+                role: "readWrite",
+                db: "mataara"
+            }
+        ]
+    }
+);

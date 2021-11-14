@@ -6,7 +6,7 @@ const connect = async (db, name) => {
   try {
     if (env !== 'test') {
       await mongoose.connect(db);
-      console.log(`Connected to ${name} database`);
+      console.log(`Connected to ${name} database (real mongodb server)`);
     } else {
       const mockDB = await MongoMemoryServer.create();
       const uri = mockDB.getUri();
