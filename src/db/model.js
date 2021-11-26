@@ -3,9 +3,9 @@ const Schema = mongoose.Schema;
 
 const purchaseSchema = new Schema({
   receipt: [],
-  status: String // "A"= Active,  "R"= Refund
+  status: String // "ACTIVE" or "REFUND"
 });
 
-const Purchase = mongoose.model('Customer', purchaseSchema);
+const Purchase = mongoose.model('Purchase', purchaseSchema);
 
 module.exports = Purchase;
