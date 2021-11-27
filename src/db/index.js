@@ -2,15 +2,23 @@ const mongoose = require('mongoose');
 const { MongoMemoryServer } = require('mongodb-memory-server');
 const env = process.env.NODE_ENV;
 
+const connectInMemory = async () => {
+  try {
+    const mockDB = await MongoMemoryServer.create();
+    const uri = mockDB.getUri();
+    await mongoose.connect(uri);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 const connect = async (db, name) => {
   try {
     if (env !== 'test') {
       await mongoose.connect(db);
       console.log(`Connected to ${name} database (real mongodb server)`);
     } else {
-      const mockDB = await MongoMemoryServer.create();
-      const uri = mockDB.getUri();
-      await mongoose.connect(uri);
+      await connectInMemory();
     }
   } catch (err) {
     console.log(err);
@@ -39,4 +47,4 @@ clearDatabase = async () => {
   }
 }
 
-module.exports = { connect, close, clearDatabase };
+module.exports = { connect, connectInMemory, close, clearDatabase };

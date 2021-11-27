@@ -1,12 +1,12 @@
 const server = require('../src/db/index');
-const Customer = require('../src/db/model');
+const Purchase = require('../src/db/model');
 
 const setup = () => {
   before(async () => {
     try {
-      await server.connect();
+      await server.connectInMemory();
     } catch (err) {
-      console.log(err)
+      console.log(err);
     }
   });
 
@@ -27,17 +27,16 @@ const setup = () => {
   });
 };
 
-
-postReceipt = (receipt) => {
-  const newSell = new Customer({
+postPurchase = (receipt) => {
+  const newPurchase = new Purchase({
     receipt: receipt,
-    status: 'A'
+    status: 'ACTIVE'
   });
-  return newSell.save()
+  return newPurchase.save();
 };
 
 
 module.exports = {
   setup,
-  postReceipt
+  postPurchase
 };

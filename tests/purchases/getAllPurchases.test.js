@@ -5,15 +5,19 @@ const app = require('../../app');
 
 const url = '/api/v1/purchases'
 
-describe('Get all the purchases', function() {
+describe('Get all purchases (empty db)', function() {
+
   setup();
-  it('Status code 200', async () => {
+
+  it('has status code 200', async () => {
     const res = await request(app).get(url);
     expect(res.statusCode).to.equal(200);
   });
 
-  it('Return an Array', async () => {
+  it('returns an empty Array', async () => {
     const res = await request(app).get(url);
-    expect(res.body).to.be.an('Array');
+    expect(res.body).to.be.an('Array').that.is.empty;
   });
 });
+
+// TODO: test with a populated db
