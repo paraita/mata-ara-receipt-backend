@@ -6,10 +6,8 @@
   "scripts": {
     "start": "NODE_ENV=prod node server",
     "dev": "NODE_ENV=dev nodemon server",
-    "test": "NODE_ENV=test mocha --recursive --exit --timeout 10000",
-    "test:all": "npm test tests",
-    "test:purchases": "npm test tests/purchases",
-    "test:buy": "npm test tests/product/"
+    "test": "NODE_ENV=test mocha --recursive --exit --timeout 10000 tests",
+    "coverage": "NODE_ENV=test nyc --reporter=lcov --reporter=text --include='src/**/*.js' --exclude='tests/**/*.js' mocha -R @danmasta/mocha-sonar tests/* --exit"
   },
   "keywords": [],
   "author": "",
@@ -23,5 +21,9 @@
     "mongoose": "^6.0.10",
     "nodemon": "^2.0.13",
     "supertest": "^6.1.6"
+  },
+  "devDependencies": {
+    "@danmasta/mocha-sonar": "^1.0.1",
+    "nyc": "^15.1.0"
   }
 }
