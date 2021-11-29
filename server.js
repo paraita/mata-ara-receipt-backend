@@ -19,4 +19,4 @@ const main = async () => {
 
 if (require.main === module) {
   return main();
-};
+}
